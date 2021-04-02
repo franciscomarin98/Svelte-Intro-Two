@@ -1,8 +1,9 @@
 <script>
 	import Counter from "./components/Counter.svelte";
+	import Input from "./components/Input.svelte";
 	let commonProps = {
-		maxContador: 25
-	}
+		maxContador: 25,
+	};
 </script>
 
 <div class="App">
@@ -11,6 +12,9 @@
 		<Counter initialState={5} {...commonProps} />
 		<Counter initialState={15} {...commonProps} />
 		<Counter initialState={30} {...commonProps} />
+	</div>
+	<div class="inputs">
+		<Input />
 	</div>
 </div>
 
