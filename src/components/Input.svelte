@@ -1,6 +1,8 @@
 <script>
+    import Movie from "./Movie.svelte";
+
     let value = "";
-    let result;
+    let result = [];
     let loading = false;
     const handleInput = (event) => (value = event.target.value);
 
@@ -26,10 +28,12 @@
 
     {#if loading}
         <strong>Cargando...</strong>
-    {:else if result?.length > 0}
-        <strong>Tenemos {result.length} peliculas</strong>
     {:else}
-        <strong>No hay resultados</strong>
+        {#each result as { Title, Poster: poster }}
+            <Movie {Title} {poster} />
+        {:else}
+            <strong>No hay resultados</strong>
+        {/each}
     {/if}
 </div>
 
