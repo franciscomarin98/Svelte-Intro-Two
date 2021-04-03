@@ -11,7 +11,7 @@
     $: isEvenOrOdd = contador % 2 === 0 ? "Is Even" : "Is Odd";
     $: if (contador > maxContador) {
         contador = 10;
-        console.log("Ya estas en el limite");
+        // console.log("Ya estas en el limite");
     }
 </script>
 
