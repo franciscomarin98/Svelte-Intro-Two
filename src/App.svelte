@@ -7,19 +7,19 @@
 </script>
 
 <div class="App">
-	<h1>Contadores</h1>
+	<!-- <h1>Contadores</h1>
 	<div class="contadores">
 		<Counter initialState={5} {...commonProps} />
 		<Counter initialState={15} {...commonProps} />
 		<Counter initialState={30} {...commonProps} />
-	</div>
+	</div> -->
 	<div class="inputs">
 		<Input />
 	</div>
 </div>
 
 <style>
-	.contadores {
+	/* .contadores {
 		display: flex;
-	}
+	} */
 </style>
