@@ -3,17 +3,13 @@
 
     let value = "";
     let result = [];
-    let loading = false;
+
     const handleInput = (event) => (value = event.target.value);
 
     $: if (value.length > 2) {
-        loading = true;
-        fetch(`http://www.omdbapi.com/?s=${value}&apikey=8183bb76`)
+        result = fetch(`http://www.omdbapi.com/?s=${value}&apikey=8183bb76`)
             .then((res) => res.json())
-            .then((apiResponse) => {
-                result = apiResponse.Search || [];
-                loading = false;
-            });
+            .then((apiResponse) => apiResponse.Search || []);
     }
 </script>
 
@@ -26,15 +22,15 @@
         on:input={handleInput}
     />
 
-    {#if loading}
+    {#await result}
         <strong>Cargando...</strong>
-    {:else}
-        {#each result as { Title, Poster: poster }}
+    {:then movies}
+        {#each movies as { Title, Poster: poster }}
             <Movie {Title} {poster} />
         {:else}
             <strong>No hay resultados</strong>
         {/each}
-    {/if}
+    {/await}
 </div>
 
 <style>

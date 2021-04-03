@@ -13,13 +13,22 @@
 		<Counter initialState={15} {...commonProps} />
 		<Counter initialState={30} {...commonProps} />
 	</div> -->
-	<div class="inputs">
+	<section>
+		<h1>Search movie</h1>
 		<Input />
-	</div>
+	</section>
 </div>
 
 <style>
 	/* .contadores {
 		display: flex;
 	} */
+	h1 {
+		font-size: 32px;
+	}
+	section {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
 </style>
